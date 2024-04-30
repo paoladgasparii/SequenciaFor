@@ -13,6 +13,8 @@ namespace SequenciaFor
             double valor = 0;
             double total = 0;
             string entrada;
+            double inteira = 0;
+            double meia = 0;
 
             for (int i = 1; i <= 10; i++)
             {
@@ -22,13 +24,14 @@ namespace SequenciaFor
                 if (entrada == "I")
                 {
                     valor = 100;
+                    inteira++;
 
                 } 
                 else if (entrada == "M")
                 {
 
-                    valor = 100 / 2;
-
+                    valor = valor / 2;
+                    meia++;
                 }
 
             }
@@ -41,13 +44,13 @@ namespace SequenciaFor
                 if (entrada == "I")
                 {
                     valor = 150;
-
+                    inteira++;
                 }
                 else if (entrada == "M")
                 {
 
-                    valor = 150 / 2;
-
+                    valor = valor / 2;
+                    meia++;
                 }
             }
 
@@ -59,20 +62,26 @@ namespace SequenciaFor
                 if (entrada == "I")
                 {
                     valor = 200;
-
+                    inteira++;
                 }
                 else if (entrada == "M")
                 {
 
-                    valor = 200 / 2;
-
+                    valor = valor / 2;
+                    meia++;
                 }
 
-                _ = valor;
-                _ = total;
+
+                valor++;
+                total++;
                 total = total + valor;
 
+
             }
+
+            Console.WriteLine("Faturamento total: " + total);
+            Console.WriteLine("Ingressos pagos integralmente: " +inteira);
+            Console.WriteLine("Ingressos pagos meia entrada: " +meia);
         }
     }
 }
