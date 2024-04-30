@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,78 +11,45 @@ namespace SequenciaFor
     {
         static void Main(string[] args)
         {
-            double valor = 0;
             double total = 0;
-            string entrada;
             double inteira = 0;
             double meia = 0;
 
-            for (int i = 1; i <= 10; i++)
+            for (int ingresso = 1; ingresso <= 30; ingresso++)
             {
-                Console.WriteLine("Entrada (I)ntegral (M)eia: ");
-                entrada = Console.ReadLine();
+                double valor = 0;
 
-                if (entrada == "I")
-                {
+                if (ingresso <= 10)
                     valor = 100;
-                    inteira++;
 
-                } 
-                else if (entrada == "M")
-                {
-
-                    valor = valor / 2;
-                    meia++;
-                }
-
-            }
-
-            for (int i = 1; i <= 20; i++) 
-            {
-                Console.WriteLine("Entrada (I)ntegral (M)eia: ");
-                entrada = Console.ReadLine();
-
-                if (entrada == "I")
-                {
+                else if (ingresso <= 20)
                     valor = 150;
-                    inteira++;
-                }
-                else if (entrada == "M")
-                {
 
-                    valor = valor / 2;
-                    meia++;
-                }
-            }
-
-            for (int i = 1; i <= 30; i++)
-            {
-                Console.WriteLine("Entrada (I)ntegral (M)eia: ");
-                entrada = Console.ReadLine();
-
-                if (entrada == "I")
-                {
+                else
                     valor = 200;
+
+                Console.WriteLine("Ingresso", +ingresso, ": " );
+                Console.WriteLine("Digite (M) se o cliente for Estudante ou (I) caso contrário: ");
+                string resp = Console.ReadLine();
+
+                if (resp == "I")
+                {
+                    total += valor;
                     inteira++;
                 }
-                else if (entrada == "M")
+                else
                 {
-
-                    valor = valor / 2;
+                    total += valor / 2;
                     meia++;
                 }
 
-
-                valor++;
-                total++;
-                total = total + valor;
-
-
             }
 
-            Console.WriteLine("Faturamento total: " + total);
-            Console.WriteLine("Ingressos pagos integralmente: " +inteira);
-            Console.WriteLine("Ingressos pagos meia entrada: " +meia);
+            Console.WriteLine("Faturamento total: R$" + total);
+            Console.WriteLine("Quantidades de entradas integrais: " + inteira);
+            Console.WriteLine("Quantidades de meias entradas: " + meia);
+
+            Console.ReadKey();
         }
     }
 }
